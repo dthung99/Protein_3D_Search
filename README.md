@@ -17,7 +17,7 @@ The application is deployed on AWS using the following steps:
    - Download data from this Google Cloud Storage: `gs://fh-public/wikicrow2` to [deployment_files/data_pipeline/data/wikicrow2](deployment_files/data_pipeline/data/wikicrow2).
    - Use [add_pro_des_to_db.py](deployment_files/data_pipeline/add_pro_des_to_db.py) to add the protein names and descriptions from the [data/wikicrow2](deployment_files/data_pipeline/data/wikicrow2).
    - Use [add_pdb_to_db.py](deployment_files/data_pipeline/add_pdb_to_db.py) to fetch the PDB file for the 3D model from the internet.
-   - Use [pipeline_report.log](deployment_files/data_pipeline/pipeline_report.log) contains information about the protein that was not found with the pipelines (Searched through RCSB and AlphaFold). In the pipelines I couldn't find 3D model of around 1300/20000 proteins (~7%).
+   - Use [pipeline_report.log](deployment_files/data_pipeline/pipeline_report.log) contains information about the protein that was not found with the pipelines (Searched through both RCSB and AlphaFold). In the pipelines I couldn't find 3D model of around 1300/20000 proteins (~7%).
 
 3. **Web Server**: The [web_server](deployment_files/web_server) folder contains the Flask application and related files. To run the web server, follow these steps:
    - Ensure Gunicorn is installed.
