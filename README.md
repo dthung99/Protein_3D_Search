@@ -22,6 +22,7 @@ The application is deployed on AWS using the following steps:
    - Use [pipeline_report.log](deployment_files/data_pipeline/pipeline_report.log) contains information about the protein that was not found with the pipelines (Searched through both RCSB and AlphaFold). In the pipelines I couldn't find 3D model of around 1300/20000 proteins (~7%).
 
 3. **Web Server**: The [web_server](deployment_files/web_server) folder contains the Flask application and related files. To run the web server, follow these steps:
+   - Connect to your webserver (in my case, AWS EC2).
    - Ensure Gunicorn is installed.
    - Set up an SSL certificate from Let's Encrypt.
    - Start the Gunicorn server with the following command:
