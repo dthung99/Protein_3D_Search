@@ -2,7 +2,7 @@
 
 This is a web server application built using Flask and served with Gunicorn for viewing Protein structures.
 
-Access the website here: [dthung.xyz](dthung.xyz). If you don't know what protein name to enter, try some of these: ABCC1, KCNJ16, LDHAL6B, MAP3K6, TCEANC2,...
+Access the website here: [https://dthung.xyz/](https://dthung.xyz/). If you don't know what protein name to enter, try some of these: ABCC1, KCNJ16, LDHAL6B, MAP3K6, TCEANC2,...
 
 ## Development
 
