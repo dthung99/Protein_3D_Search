@@ -1,6 +1,6 @@
 # Protein Structure Search Engine
 
-This is a web server application built using Flask and Gunicorn for viewing Protein structures.
+This is a web server application built using Flask and served with Gunicorn for viewing Protein structures.
 
 ## Development
 
