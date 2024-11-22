@@ -2,6 +2,8 @@
 
 This is a web server application built using Flask and served with Gunicorn for viewing Protein structures.
 
+Access the website here: [dthung.xyz](dthung.xyz). If you don't know what protein name to enter, try some of these: ABCC1, KCNJ16, LDHAL6B, MAP3K6, TCEANC2,...
+
 ## Development
 
 Only code used in deployment on AWS is provided.
@@ -28,3 +30,9 @@ The application is deployed on AWS using the following steps:
      ```
    - This command will start the Gunicorn server and host it on HTTPS.
    - **NOTE**: HTTPS is required as the 3D viewer is an embedded window fetched from another HTTPS source.
+
+## Illustration
+
+![Image 1](images/image_1.png)
+
+![Image 2](images/image_2.png)
