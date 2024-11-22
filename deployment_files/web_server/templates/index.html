@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        // Function to create a blob URL from PDB content
+        function renderMolstar(protein_name) {
+            const pdbUrl = `https://dthung.xyz/pdb?protein=${protein_name}`;  // Ensure this matches your Flask route
+            const iframe = document.getElementById('molstar-iframe');
+            iframe.src = `https://molstar.org/viewer/?structure-url=${encodeURIComponent(pdbUrl)}&structure-url-format=pdb&structure-url-is-binary=0&hide-controls=1`;
+        }
+    </script>
+    <title>Protein Search</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Search for a Protein</h1>
+        <form method="POST">
+            <input type="text" name="search_term" placeholder="Enter a protein name" required>
+            <button type="submit">Search</button>
+        </form>
+        {% if name %}
+        <h2>Search Results</h2>
+        <div>
+            <strong>Name:</strong> {{ name }}
+        </div>
+        <br>
+        <strong>Description:</strong>
+        {% if description %}
+        <div class="scrollable-text">
+            {% for line in description %}
+            {% if line.startswith('## ') %}
+            <h3>{{ line[3:]}}</h3>
+            {% else %}
+            <div> {{ line }}</div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% else %}
+        <div>No description found!</div>
+        {% endif %}
+        <br>
+        <strong>3D model:</strong>
+
+        {% if pdb %}
+        <iframe id="molstar-iframe" width="100%" height="600" frameborder="0" allowfullscreen="0"></iframe>
+        <script>
+            // Pass the PDB content from Flask to JavaScript
+            const protein_name = `{{ name }}`;
+            renderMolstar(protein_name);
+        </script>
+        {% else %}
+        <div>No 3D model found!</div>
+        {% endif %}
+
+        {% else %}
+        {% if request.method == 'POST' %}
+        <p>No results found.</p>
+        <div>Try these Protein: A1BG CSN2 IL1R2</div>
+        <div>(I just picked random proteins in the database)</div>
+        {% endif %}
+        {% endif %}
+    </div>
+</body>
+
+</html>
