@@ -2,7 +2,7 @@
 
 This is a web server application for viewing Protein structures.
 
-Access the website here: [http://proteinsearch.dthung.com/](http://proteinsearch.dthung.com/). If you don't know what protein name to enter, try some of these: ABCC1, KCNJ16, LDHAL6B, MAP3K6, TCEANC2,...
+Access the website here: [https://proteinsearch.dthung.com/](https://proteinsearch.dthung.com/). If you don't know what protein name to enter, try some of these: ABCC1, KCNJ16, LDHAL6B, MAP3K6, TCEANC2,...
 
 ## Main component
 
